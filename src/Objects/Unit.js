@@ -27,7 +27,7 @@ const Unit = new Phaser.Class({
     },
     takeDamage(damage) {
       if (this.texture.key !== 'player') {
-        updatePlayerScore(damage);
+        // updatePlayerScore(damage);
       }
       this.hp -= damage;
       if (this.hp <= 0) {

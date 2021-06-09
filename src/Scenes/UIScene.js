@@ -2,6 +2,8 @@ import Phaser from 'phaser';
 import HeroesMenu from '../Menus/HeroesMenu';
 import EnemiesMenu from '../Menus/EnemiesMenu';
 import ActionsMenu from '../Menus/ActionsMenu';
+import Message from '../Message/Message';
+
 export default class UIScene extends Phaser.Scene {
   constructor() {
     super('UIScene');
@@ -38,6 +40,22 @@ export default class UIScene extends Phaser.Scene {
 
     this.remapHeroes();
     this.remapEnemies();
+
+    this.input.keyboard.on('keydown', this.onKeyInput, this);
+
+    this.battleScene.events.on("PlayerSelect", this.onPlayerSelect, this);
+
+    	
+    this.events.on("SelectEnemies", this.onSelectEnemies, this)
+
+    	
+    this.events.on("Enemy", this.onEnemy, this);
+
+    	
+    this.battleScene.nextTurn();
+
+    this.message = new Message(this, this.battleScene.events);
+    this.add.existing(this.message);
     
   }
 
@@ -48,5 +66,34 @@ export default class UIScene extends Phaser.Scene {
     remapEnemies(){
         const enemies = this.battleScene.enemies;
         this.enemiesMenu.remap(enemies);
-}
+    }
+    onKeyInput(e) {
+        if(this.currentMenu) {
+            if(e.code === "ArrowUp") {
+                this.currentMenu.moveSelectionUp();
+            } else if(e.code === "ArrowDown") {
+                this.currentMenu.moveSelectionDown();
+            } else if(e.code === "ArrowRight" || e.code === "Shift") {
+ 
+            } else if(e.code === "Space" || e.code === "ArrowLeft") {
+                this.currentMenu.confirm();
+            } 
+        }
+    }
+    onPlayerSelect(sel_id) {
+        this.heroesMenu.select(sel_id);
+        this.actionsMenu.select(0);
+        this.currentMenu = this.actionsMenu;
+    }
+    onSelectEnemies() {
+        this.currentMenu = this.enemiesMenu;
+        this.enemiesMenu.select(0);
+    }
+    onEnemy(enemy_index) {
+        this.heroesMenu.deselect();
+        this.actionsMenu.deselect();
+        this.enemiesMenu.deselect();
+        this.currentMenu = null;
+        this.battleScene.receivePlayerSelection('attack', enemy_index);
+    }
 }
