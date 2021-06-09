@@ -67,6 +67,9 @@ export default class GameScene extends Phaser.Scene {
         }        
         this.physics.add.overlap(this.player, this.spawns, this.onMeetEnemy, false, this);
 
+        
+      this.sys.events.on('wake', this.wake, this);
+
   }
 
   update(time,delta){
@@ -119,5 +122,15 @@ export default class GameScene extends Phaser.Scene {
         zone.y = Phaser.Math.RND.between(0, this.physics.world.bounds.height); 
 
         this.cameras.main.shake(20);
+
+        // switch to BattleScene
+        this.scene.switch('BattleScene');
   }
+
+  wake() {
+    this.cursors.left.reset();
+    this.cursors.right.reset();
+    this.cursors.up.reset();
+    this.cursors.down.reset();
+}
 }

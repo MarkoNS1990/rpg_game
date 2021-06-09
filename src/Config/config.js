@@ -1,19 +1,25 @@
-import Phaser from 'phaser';
-import BootScene from '../Scenes/BootScene';
-import GameScene from '../Scenes/GameScene';
+
+
+import 'phaser';
 
 export default {
   type: Phaser.AUTO,
-    parent: 'content',
-    width: 320,
-    height: 240,
-    zoom: 2,
-    pixelArt: true,
-    physics: {
-        default: 'arcade',
-        arcade: {
-            gravity: { y: 0 },
-            debug: true
-        }
-    }
+  parent: 'phaser-example',
+  width: 800,
+  height: 600,
+  pixelArt: true,
+  dom: {
+    createContainer: true,
+  },
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: { y: 0 },
+      debug: true,
+    },
+  },
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+  },
 };
