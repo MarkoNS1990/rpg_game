@@ -18,5 +18,7 @@ export default class GameScene extends Phaser.Scene {
 	  const grass = map.createStaticLayer('Grass', tiles, 0, 0);
         const obstacles = map.createStaticLayer('Obstacles', tiles, 0, 0);
         obstacles.setCollisionByExclusion([-1]);
+
+    this.player = this.physics.add.sprite(50, 100, 'player', 6)    
   }
 }
