@@ -1,5 +1,4 @@
 import Phaser from 'phaser';
-import logoImg from '../../assets/logo.png';
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
@@ -55,7 +54,19 @@ export default class GameScene extends Phaser.Scene {
       frames: this.anims.generateFrameNumbers('player', { frames: [ 0, 6, 0, 12 ] }),
       frameRate: 10,
       repeat: -1
-  });    
+  });
+  
+  this.physics.add.collider(this.player, obstacles);
+
+  this.spawns = this.physics.add.group({ classType: Phaser.GameObjects.Zone });
+        for(var i = 0; i < 30; i++) {
+            var x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
+            var y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
+            // parameters are x, y, width, height
+            this.spawns.create(x, y, 20, 20);            
+        }        
+        this.physics.add.overlap(this.player, this.spawns, this.onMeetEnemy, false, this);
+
   }
 
   update(time,delta){
@@ -64,21 +75,21 @@ export default class GameScene extends Phaser.Scene {
         // Horizontal movement
         if (this.cursors.left.isDown)
         {
-            this.player.body.setVelocityX(-100);
+            this.player.body.setVelocityX(-70);
         }
         else if (this.cursors.right.isDown)
         {
-            this.player.body.setVelocityX(100);
+            this.player.body.setVelocityX(70);
         }
  
         // Vertical movement
         if (this.cursors.up.isDown)
         {
-            this.player.body.setVelocityY(-100);
+            this.player.body.setVelocityY(-70);
         }
         else if (this.cursors.down.isDown)
         {
-            this.player.body.setVelocityY(100);
+            this.player.body.setVelocityY(70);
         } 
         
         if (this.cursors.left.isDown)
@@ -101,5 +112,12 @@ export default class GameScene extends Phaser.Scene {
         {
             this.player.anims.stop();
         }
+  }
+
+  onMeetEnemy(player,zone){
+    zone.x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
+        zone.y = Phaser.Math.RND.between(0, this.physics.world.bounds.height); 
+
+        this.cameras.main.shake(20);
   }
 }
