@@ -7,11 +7,16 @@ export default class GameScene extends Phaser.Scene {
   }
 
   preload() {
-    // load images
-    this.load.image('logo', logoImg);
+    
   }
 
   create() {
-    this.add.image(400, 300, 'logo');
+    const map = this.make.tilemap({ key: 'map' });
+
+    const tiles = map.addTilesetImage('spritesheet', 'tiles');
+        
+	  const grass = map.createStaticLayer('Grass', tiles, 0, 0);
+        const obstacles = map.createStaticLayer('Obstacles', tiles, 0, 0);
+        obstacles.setCollisionByExclusion([-1]);
   }
 }
