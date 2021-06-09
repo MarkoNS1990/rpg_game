@@ -14,17 +14,14 @@ const UIScene = new Phaser.Class({
   create() {
     // draw some background for the menu
     this.graphics = this.add.graphics();
-    this.graphics.fillStyle(0x1c9326, 1);
-    this.graphics.lineStyle(1, 0xffffff);
-
-    this.graphics.strokeRect(2, 150, 90, 100);
-    this.graphics.fillRect(2, 150, 90, 100);
-
-    this.graphics.strokeRect(95, 150, 90, 100);
-    this.graphics.fillRect(95, 150, 90, 100);
-
-    this.graphics.strokeRect(188, 150, 130, 100);
-    this.graphics.fillRect(188, 150, 130, 100);
+        this.graphics.lineStyle(1, 0xffffff);
+        this.graphics.fillStyle(0x031f4c, 1);        
+        this.graphics.strokeRect(2, 150, 90, 100);
+        this.graphics.fillRect(2, 150, 90, 100);
+        this.graphics.strokeRect(95, 150, 90, 100);
+        this.graphics.fillRect(95, 150, 90, 100);
+        this.graphics.strokeRect(188, 150, 130, 100);
+        this.graphics.fillRect(188, 150, 130, 100);
 
     // basic container to hold all menus
     this.menus = this.add.container();

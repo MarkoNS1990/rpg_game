@@ -10,6 +10,9 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
+
+    // Add top menu bar
+    
     const map = this.make.tilemap({ key: 'map' });
 
     const tiles = map.addTilesetImage('spritesheet', 'tiles');
@@ -18,7 +21,7 @@ export default class GameScene extends Phaser.Scene {
         const obstacles = map.createStaticLayer('Obstacles', tiles, 0, 0);
         obstacles.setCollisionByExclusion([-1]);
 
-    this.player = this.physics.add.sprite(50, 100, 'player', 6)
+    this.player = this.physics.add.sprite(200, 200, 'player', 9)
     this.physics.world.bounds.width = map.widthInPixels;
     this.physics.world.bounds.height = map.heightInPixels;
     this.player.setCollideWorldBounds(true); 
@@ -61,7 +64,7 @@ export default class GameScene extends Phaser.Scene {
   this.spawns = this.physics.add.group({ classType: Phaser.GameObjects.Zone });
         for(var i = 0; i < 30; i++) {
             var x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
-            var y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
+            var y = Phaser.Math.RND.between(40, this.physics.world.bounds.height);
             // parameters are x, y, width, height
             this.spawns.create(x, y, 20, 20);            
         }        
@@ -69,7 +72,7 @@ export default class GameScene extends Phaser.Scene {
 
         
       this.sys.events.on('wake', this.wake, this);
-
+      this.add.rectangle(20, 10, 1600, 35, 0x000000).setAlpha(1);  
   }
 
   update(time,delta){

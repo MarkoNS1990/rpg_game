@@ -14,7 +14,8 @@ export default class BattleScene extends Phaser.Scene {
     this.startBattle();
     // on wake event we call startBattle too
     this.sys.events.on('wake', this.startBattle, this);
-
+    	
+    
   }
 
   nextTurn() {  
@@ -49,17 +50,17 @@ export default class BattleScene extends Phaser.Scene {
 }
     startBattle() {
     // player character - warrior
-    const warrior = new PlayerCharacter(this, 250, 50, "player", 1, "Warrior", 100, 20);        
+    const warrior = new PlayerCharacter(this, 380, 150, "player", 1, "Warrior", 100, 100);        
     this.add.existing(warrior);
     
     // player character - mage
-    const mage = new PlayerCharacter(this, 250, 100, "player", 4, "Mage", 80, 8);
+    const mage = new PlayerCharacter(this, 380, 200, "player", 4, "Mage", 80, 100);
     this.add.existing(mage);            
     
-    const dragonblue = new Enemy(this, 50, 50, "dragonblue", null, "Dragon", 50, 3);
+    const dragonblue = new Enemy(this, 440, 150, "dragonblue", null, "Dragon", 50, 3);
     this.add.existing(dragonblue);
     
-    const dragonOrange = new Enemy(this, 50, 100, "dragonorrange", null,"Dragon2", 50, 3);
+    const dragonOrange = new Enemy(this, 440, 200, "dragonorrange", null,"Dragon2", 50, 3);
     this.add.existing(dragonOrange);
     
     // array with heroes
@@ -82,7 +83,7 @@ export default class BattleScene extends Phaser.Scene {
     }
     exitBattle() {
         this.scene.sleep('UIScene');
-        this.scene.switch('WorldScene');
+        this.scene.switch('Game');
     }
 
     
@@ -114,6 +115,6 @@ export default class BattleScene extends Phaser.Scene {
         // sleep the UI
         this.scene.sleep('UIScene');
         // return to WorldScene and sleep current BattleScene
-        this.scene.switch('WorldScene');
+        this.scene.switch('Game');
     }
 }
