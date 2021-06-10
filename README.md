@@ -23,7 +23,7 @@ try to defeat the enemies.
 
 ## Screenshot
 
-![screenshot](ss.jpg)
+![](./ss.JPG)
 
 ## Setup
 
@@ -69,5 +69,5 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Microverse
-- Zil Norvils (https://github.com/zilton7)
-- Alex Ramazzoti (https://github.com/rammazzoti2000)
+- Zil Norvils [![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/zilton7)
+- Alex Ramazzoti[![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rammazzoti2000)
