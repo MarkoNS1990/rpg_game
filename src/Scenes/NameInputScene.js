@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import 'phaser';
 import { setPlayerName } from '../Score/PlayerName';
 
@@ -25,7 +26,7 @@ export default class NameInputScene extends Phaser.Scene {
       Phaser.Input.Keyboard.KeyCodes.ENTER,
     );
 
-    this.returnKey.on('down', (event) => {
+    this.returnKey.on('down', () => {
       const name = this.nameInput.getChildByName('name').value;
       setPlayerName(name);
       this.scene.start('Boot');
