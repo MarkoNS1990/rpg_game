@@ -40,6 +40,10 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "phaser": "^3.24.1"
+    "phaser": "^3.24.1",
+    "node-fetch": "^2.6.1",
+    "regenerator-runtime": "^0.13.7",
+    "core-js": "^3.12.1",
+    "jest": "^26.6.3"
   }
 }

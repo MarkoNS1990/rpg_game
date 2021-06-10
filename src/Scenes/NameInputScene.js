@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 import 'phaser';
 import { setPlayerName } from '../Score/PlayerName';
 

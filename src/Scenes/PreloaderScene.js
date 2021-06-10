@@ -1,3 +1,5 @@
+/* eslint-disable no-undef, class-methods-use-this, radix */
+
 import 'phaser';
 
 export default class PreloaderScene extends Phaser.Scene {

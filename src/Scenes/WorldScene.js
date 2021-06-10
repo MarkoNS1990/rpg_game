@@ -1,3 +1,4 @@
+/* eslint-disable no-undef, max-len */
 import { getPlayerScore, updateScoreText } from '../Score/PlayerScore';
 import Button from '../Objects/Button';
 
@@ -7,7 +8,7 @@ const WorldScene = new Phaser.Class({
   Extends: Phaser.Scene,
 
   initialize: function WorldScene() {
-    Phaser.Scene.call(this, { key: 'Game' });
+    Phaser.Scene.call(this, { key: 'WorldScene' });
   },
   preload() {
     // load the resources here

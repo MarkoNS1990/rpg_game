@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 import Unit from './Unit';
 
 const PlayerCharacter = new Phaser.Class({

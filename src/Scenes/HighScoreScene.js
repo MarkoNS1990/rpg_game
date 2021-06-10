@@ -1,3 +1,5 @@
+/* eslint-disable no-undef,  class-methods-use-this, */
+
 import 'phaser';
 import Button from '../Objects/Button';
 import { getPlayerName } from '../Score/PlayerName';

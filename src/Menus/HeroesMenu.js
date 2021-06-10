@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import Phaser from 'phaser';
+
 import Menu from './Menu';
 
 const HeroesMenu = new Phaser.Class({
