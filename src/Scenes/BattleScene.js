@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import PlayerCharacter from '../Objects/PlayerCharacter';
 import Enemy from '../Objects/Enemy';
+import { getPlayerScore, updateScoreText } from '../Score/PlayerScore';
 
 export default class BattleScene extends Phaser.Scene {
   constructor() {
@@ -11,6 +12,14 @@ export default class BattleScene extends Phaser.Scene {
   {
     // change the background to green
     this.cameras.main.setBackgroundColor("rgba(0, 200, 0, 0.5)");
+    let scoreText = this.add.text(16, 16, `score: ${getPlayerScore()}`, {
+        fontSize: '16px',
+        fill: '#fff',
+      });
+      updateScoreText(scoreText);
+
+    // Add dark Box
+    this.add.rectangle(410, 300, 400, 350, 0x000000).setAlpha(0.9);  
     this.startBattle();
     // on wake event we call startBattle too
     this.sys.events.on('wake', this.startBattle, this);
