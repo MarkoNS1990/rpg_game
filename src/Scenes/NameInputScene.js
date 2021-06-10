@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 import 'phaser';
 import { setPlayerName } from '../Score/PlayerName';
 
@@ -9,14 +7,14 @@ export default class NameInputScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.html('form', '../src/assets/form.html');
+    this.load.html('form', 'assets/form.html');
   }
 
   create() {
     this.nameInput = this.add.dom(400, 320).createFromCache('form');
 
     this.message = this.add
-      .text(400, 250, 'Input Your Name & Hit ENTER', {
+      .text(400, 250, 'Write your name and hit ENTER', {
         color: '#FFFFFF',
         fontSize: 30,
         fontStyle: 'bold',
@@ -27,7 +25,7 @@ export default class NameInputScene extends Phaser.Scene {
       Phaser.Input.Keyboard.KeyCodes.ENTER,
     );
 
-    this.returnKey.on('down', () => {
+    this.returnKey.on('down', (event) => {
       const name = this.nameInput.getChildByName('name').value;
       setPlayerName(name);
       this.scene.start('Boot');

@@ -1,4 +1,3 @@
-
 import 'phaser';
 
 export default {

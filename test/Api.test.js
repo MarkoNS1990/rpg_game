@@ -1,4 +1,3 @@
-/* eslint-disable array-callback-return */
 import 'regenerator-runtime/runtime';
 import { getHighScores, submitHighScore } from '../Score/Api';
 
