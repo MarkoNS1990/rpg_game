@@ -14,6 +14,6 @@ test('Player name must be a string', () => {
 });
 
 test('Successfully set player name', () => {
-  setPlayerName('Zil');
-  expect(getPlayerName()).toBe('Zil');
+  setPlayerName('Marko');
+  expect(getPlayerName()).toBe('Marko');
 });
