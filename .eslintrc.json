@@ -19,5 +19,6 @@
     "dist/",
     "build/",
     "js/phaser.min.js"
+
   ]
 }

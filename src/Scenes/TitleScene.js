@@ -1,6 +1,8 @@
-import Phaser from 'phaser';
-import Button from '../Objects/Button';
+/* eslint-disable no-undef */
+
+import 'phaser';
 import config from '../Config/config';
+import Button from '../Objects/Button';
 
 export default class TitleScene extends Phaser.Scene {
   constructor() {
@@ -8,19 +10,58 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
-    // Title
-    this.titleText = this.add.text(this.scale.width / 2, this.scale.height / 7,
-      'Game Title', { fontSize: '64px', fill: '#fff' });
-    this.titleText.setOrigin(0.5);
+    // Add background image
+    this.add.image(0, 0, 'background').setOrigin(0).setScale(0.65);
+
+    // Add dark Box
+    this.add.rectangle(400, 300, 250, 550, 0x000000).setAlpha(0.75);
+
+    // add logo image
+    this.add.image(265, 30, 'logo').setOrigin(0).setScale(0.5);
 
     // Game
-    this.gameButton = new Button(this, config.width / 2, config.height / 2 - 100, 'blueButton1', 'blueButton2', 'Play', 'Game');
+    this.gameButton = new Button(
+      this,
+      config.width / 2,
+      config.height / 2 - 100,
+      'blueButton1',
+      'blueButton2',
+      'Play',
+      'WorldScene',
+    );
 
     // Options
-    this.optionsButton = new Button(this, config.width / 2, config.height / 2, 'blueButton1', 'blueButton2', 'Options', 'Options');
+    this.optionsButton = new Button(
+      this,
+      config.width / 2,
+      config.height / 2,
+      'blueButton1',
+      'blueButton2',
+      'Options',
+      'Options',
+    );
+
+    // HighScores
+    this.highScoreButton = new Button(
+      this,
+      config.width / 2,
+      config.height / 2 + 100,
+      'blueButton1',
+      'blueButton2',
+      'HighScores',
+      'HighScoreScene',
+    );
 
     // Credits
-    this.creditsButton = new Button(this, config.width / 2, config.height / 2 + 100, 'blueButton1', 'blueButton2', 'Credits', 'Credits');
+    this.creditsButton = new Button(
+      this,
+      config.width / 2,
+      config.height / 2 + 200,
+      'blueButton1',
+      'blueButton2',
+      'Credits',
+      'Credits',
+    );
 
     this.model = this.sys.game.globals.model;
     if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {

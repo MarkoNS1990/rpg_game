@@ -1,146 +1,81 @@
-<!--
-*** Thanks for checking out this README Template. If you have a suggestion that would
-*** make this better, please fork the repo and create a pull request or simply open
-*** an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
--->
+# Zilda - RPG Game
 
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
+An RPG game built using the Phaser 3 Framework for the JavaScript capstone project.
 
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <a href="https://github.com/rammazzoti2000/phaser_toolbox">
-    <img src="assets/microverse.png" alt="Logo" width="80" height="80">
-  </a>
+## Built With
 
-  <h3 align="center">Phaser + ES6 + Webpack</h3>
+- JavaScript
+- Phaser 3
+- Webpack
 
-  <p align="center">
-    <a href="https://github.com/rammazzoti2000/phaser_toolbox"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/rammazzoti2000/phaser_toolbox/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/rammazzoti2000/phaser_toolbox/issues">Request Feature</a>
-  </p>
-</p>
+## Live Demo
 
-# Phaser 3 Webpack Project Template
+[Live demo](https://zilton7.github.io/zilda-rpg/)
 
-A Phaser 3 project template with ES6 support via [Babel 7](https://babeljs.io/) and [Webpack 4](https://webpack.js.org/)
-that includes hot-reloading for development and production-ready builds.
+## Game Instructions
 
-Loading images via JavaScript module `import` is also supported.
+Start the game by clicking on 'Play' button,
+also you can change 'Options', check 'HighScore' table
+or view 'credits'.
+Move your player using the arrow keys on your keyboard.
+When in battle, use arrow keys to choose and space bar or left arrow to confirm your characters attack and
+try to defeat the enemies.
 
-## Clone
-* [download](https://github.com/rammazzoti2000/phaser_toolbox/archive/development.zip) or clone this repo:
-  - Clone with SSH:
-  ```
-    git@github.com:rammazzoti2000/phaser_toolbox.git
-  ```
-  - Clone with HTTPS
-  ```
-    https://github.com/rammazzoti2000/phaser_toolbox.git
+## Game Design
 
-## Requirements
+This is a turn-based role-playing game(RPG). I got the idea from the game I used to play called ADOM.
+In the game there are two main characters: A warrior and A mage, they travel the world and fight dragons.
+To navigate in the world scene, the player uses keyboard arrows up, down, left, right.
+In the battle scene, use keyboard arrows up, down, left, and space bar to attack the chosen enemy. Inside the battle, the scene player can see his characters' and enemies' health bars at all times.
+Also there are player's score available to see in the top bar in both of the scenes, when player want to quit, he can use the button 'Exit' in the top right of the bar, after clicking said button player is taken to High Score scene, where all top players and their scores are listed.
 
-[Node.js](https://nodejs.org) is required to install dependencies and run scripts via `npm`.
+## Screenshot
 
-## Available Commands
+![](./ss.JPG)
 
-| Command | Description |
-|---------|-------------|
-| `npm install` | Install project dependencies |
-| `npm start` | Build project and open web server running project |
-| `npm run build` | Builds code bundle with production settings (minification, uglification, etc..) |
+## Setup
 
-## Writing Code
+To clone this repository run:
 
-After cloning the repo, run `npm install` from your project directory. Then, you can start the local development
-server by running `npm start`.
+```
+git clone https://github.com/MarkoNS1990/rpg_game
+```
 
+To install the dependencies run:
 
-After starting the development server with `npm start`, you can edit any files in the `src` folder
-and webpack will automatically recompile and reload your server (available at `http://localhost:8080`
-by default).
+```
+npm install
+```
 
-## Customizing Template
+To run the game:
 
-### Babel
-You can write modern ES6+ JavaScript and Babel will transpile it to a version of JavaScript that you
-want your project to support. The targeted browsers are set in the `.babelrc` file and the default currently
-targets all browsers with total usage over "0.25%" but excludes IE11 and Opera Mini.
+```
+npm run start
+```
 
-  ```
-  "browsers": [
-    ">0.25%",
-    "not ie 11",
-    "not op_mini all"
-  ]
-  ```
+The browser window should popup with the game pre-loading.
 
-### Webpack
-If you want to customize your build, such as adding a new webpack loader or plugin (i.e. for loading CSS or fonts), you can
-modify the `webpack/base.js` file for cross-project changes, or you can modify and/or create
-new configuration files and target them in specific npm tasks inside of `package.json'.
+## Testing
 
-## Deploying Code
-After you run the `npm run build` command, your code will be built into a single bundle located at
-`dist/bundle.min.js` along with any other assets you project depended.
+Run tests with the following command:
 
-If you put the contents of the `dist` folder in a publicly-accessible location (say something like `http://mycoolserver.com`),
-you should be able to open `http://mycoolserver.com/index.html` and play your game.
+```
+npm test
+```
 
-<!-- CONTACT -->
-## Contributors
+## AUTHOR
 
-👤 **Alexandru Bangau**
+👤 **Marko Zecevic**
 
-- LinkedIn: [Alexandru Bangau](https://www.linkedin.com/in/alexandru-bangau/)
-- GitHub: [@rammazzoti2000](https://github.com/rammazzoti2000)
-- E-mail: bangau.alexandru@gmail.com
-- Project [Link](https://github.com/rammazzoti2000/phaser_toolbox/)
-
-## :handshake: Contributing
-
-Contributions, issues and feature requests are welcome!
-
-Feel free to check the [issues page](https://github.com/rammazzoti2000/phaser_toolbox/issues).
+[![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MarkoNS1990)
+[![](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/zecevicmarko/)
 
 ## Show your support
 
-Give a :star: if you like this project!
+Give a ⭐️ if you like this project!
 
+## Acknowledgments
 
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-* [Photonstorm](https://github.com/photonstorm/phaser3-project-template)
-* [Microverse](https://www.microverse.org/)
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/rammazzoti2000/phaser_toolbox.svg?style=flat-square
-[contributors-url]: https://github.com/rammazzoti2000/phaser_toolbox/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/rammazzoti2000/phaser_toolbox.svg?style=flat-square
-[forks-url]: https://github.com/rammazzoti2000/phaser_toolbox/network/members
-[stars-shield]: https://img.shields.io/github/stars/rammazzoti2000/phaser_toolbox.svg?style=flat-square
-[stars-url]: https://github.com/rammazzoti2000/phaser_toolbox/stargazers
-[issues-shield]: https://img.shields.io/github/issues/rammazzoti2000/phaser_toolbox.svg?style=flat-square
-[issues-url]: https://github.com/rammazzoti2000/phaser_toolbox/issues
-
-## 📝 License
-
-This project is [MIT](https://opensource.org/licenses/MIT) licensed.
+- Microverse
+- Zil Norvils [![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/zilton7)
+- Alex Ramazzoti[![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rammazzoti2000)
