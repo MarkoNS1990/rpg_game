@@ -18,7 +18,7 @@ Start the game by clicking on 'Play' button,
 also you can change 'Options', check 'HighScore' table
 or view 'credits'.
 Move your player using the arrow keys on your keyboard.
-When in battle, use arrow keys to choose and space bar to confirm your characters attack and
+When in battle, use arrow keys to choose and space bar or left arrow to confirm your characters attack and
 try to defeat the enemies.
 
 ## Game Design
