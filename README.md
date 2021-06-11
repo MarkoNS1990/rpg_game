@@ -8,9 +8,6 @@ An RPG game built using the Phaser 3 Framework for the JavaScript capstone proje
 - Phaser 3
 - Webpack
 
-## Live Demo
-
-[Live demo](https://zilton7.github.io/zilda-rpg/)
 
 ## Game Instructions
 
