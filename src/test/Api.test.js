@@ -1,6 +1,6 @@
+import fetchMock from 'jest-fetch-mock';
 import 'regenerator-runtime/runtime';
 import { getHighScores, submitHighScore } from '../Score/Api';
-import fetchMock from "jest-fetch-mock";
 
 fetchMock.enableMocks();
 beforeEach(() => {
@@ -25,7 +25,6 @@ test('Fail to receive to data', () => {
     expect(data).toHaveLength(0);
   });
 });
-
 
 test('Fail to post data, without username as parameter', () => {
   submitHighScore().then((data) => {
