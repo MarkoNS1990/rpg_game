@@ -1,5 +1,11 @@
 import 'regenerator-runtime/runtime';
 import { getHighScores, submitHighScore } from '../Score/Api';
+import fetchMock from "jest-fetch-mock";
+
+fetchMock.enableMocks();
+beforeEach(() => {
+  fetch.resetMocks();
+});
 
 test('Successfully receive JSON object via API using GET method', () => {
   getHighScores().then((data) => {
