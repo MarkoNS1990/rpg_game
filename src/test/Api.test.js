@@ -13,11 +13,13 @@ test('Successfully receive to data', () => {
   });
 });
 
+// Negative test
 test('Fail to receive to data', () => {
   getHighScores('wrong key').then((data) => {
     expect(data).toHaveLength(0);
   });
 });
+
 
 test('Fail to post data, without username as parameter', () => {
   submitHighScore().then((data) => {

@@ -12,7 +12,7 @@ export default class NameInputScene extends Phaser.Scene {
   }
 
   create() {
-    this.nameInput = this.add.dom(400, 320).createFromCache('form');
+    this.nameInput = this.add.dom(400, 310).createFromCache('form');
 
     this.message = this.add
       .text(400, 250, 'Write your name and hit ENTER', {
